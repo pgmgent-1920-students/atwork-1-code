@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: calc(var(--gutter) * 2);
 }
 
+.concert--headliner {
+  height: 620px;
+}
+
 .concert__picture {
   display: block;
   height: 100%;
@@ -47,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .concert__artist {
+  display: inline-block;
   background: linear-gradient(to right, var(--color-green), var(--color-yellow));
   padding: var(--spacer);
 
