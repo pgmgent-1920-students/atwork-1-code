@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700&display=swap');
+
+:root {
+  --color-green: #5BC4BF;
+  --color-yellow: #FFE131;
+  --color-white: #fff;
+  --color-black: #000;
+  --spacer: 12px;
+  --font-family-roboto: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-family-roboto);
+  font-weight: 500;
+
+  animation: animBackground 10s linear 0s infinite alternate;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.portfolio > * {
+  transition: all 286ms ease-in-out 0s;
+}
+
+.work {
+  transition: all 286ms ease-in-out 0s;
+}
+
+.hidden {
+  transition: all 286ms ease-in-out 0s;
+  transform: scale(0);
+  flex-basis: 0px;
+  max-width: 0px;
+  width: 0px;
+  padding: 0;
+}

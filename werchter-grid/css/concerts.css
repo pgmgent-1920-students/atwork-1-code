@@ -12,6 +12,8 @@
 body {
   font-family: var(--font-family-roboto);
   font-weight: 500;
+
+  animation: animBackground 10s linear 0s infinite alternate;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,13 +28,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: calc(var(--gutter)*4) calc(var(--gutter)*4);
   margin-bottom: calc(var(--gutter));
 
-  animation: animBackground 10s ease-in-out 0s infinite alternate;
+  
 }
 
 @keyframes animBackground {
-  0% { background-position-x: 0; }
-  50% { background-position-x: -10000px; }
-  100% { background-position-x: 0; }
+  0% { filter: grayscale(0%); }
+  50% { filter: grayscale(100%);  }
+  100% { filter: grayscale(0%);  }
 }
 
 .logo {
