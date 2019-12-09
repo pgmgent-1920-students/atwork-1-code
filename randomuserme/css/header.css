@@ -1,0 +1,24 @@
+.wrapper--header {
+  background: var(--color-blue);
+  padding-top: calc(var(--gutter) * 2);
+  padding-bottom: calc(var(--gutter) * 2);
+}
+
+.btn-toggle {
+  z-index: 999;
+  position: absolute;
+  display: none;
+  top: 0;
+  right: var(--gutter);
+
+  width: 32px;
+  height: 32px;
+
+  background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 768px) {
+  .btn-toggle {
+    display: block;
+  }
+}

@@ -1,0 +1,6 @@
+:root {
+  --font-roboto: 'Roboto', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --color-blue: rgba(0, 0, 255, 1);
+  --color-white: rgba(255, 255, 255, 1);
+}
