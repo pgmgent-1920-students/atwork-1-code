@@ -65,7 +65,7 @@
           <img src="${user.picture.large}" alt="" />
         </picture>
         <h1 class="user-detail__name">${user.name.first} ${user.name.last}</h1>
-        <table>
+        <table class="user-detail__info">
           <tr>
             <td>Email</td><td>${user.email}</td>
           </tr>
@@ -82,7 +82,7 @@
             <td>Cell</td><td>${user.cell}</td>
           </tr>
           <tr>
-            <td>Location</td><td>${user.location.street.name} ${user.location.street.number} ${user.location.city} ${user.location.country}</td>
+            <td>Location</td><td><span class="user-detail__street">${user.location.street.name} ${user.location.street.number}</span><span class="user-detail__city">${user.location.city}</span><span class="user-detail__country">${user.location.country}</span></td>
           </tr>
           <tr>
             <td>Nationality</td><td>${user.nat}</td>
