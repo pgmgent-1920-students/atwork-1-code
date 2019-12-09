@@ -7,6 +7,10 @@
     },
     cacheElements () {
       this.randomUsersListElement = document.querySelector('.random-users-list');
+      this.userDetailElement = document.querySelector('.user-detail');
+      this.userDetailElement.addEventListener('click', (ev) => {
+        this.userDetailElement.classList.remove('open');
+      });
     },
     loadRandomUsers (amount) {
       // eslint-disable-next-line no-undef
@@ -36,6 +40,11 @@
           </article>
           `;
           this.randomUsersListElement.append(userElement);
+
+          userElement.querySelector('.random-user').addEventListener('click', (ev) => {
+            const userId = ev.target.dataset.id || ev.target.parentNode.dataset.id || ev.target.parentNode.parentNode.dataset.id;
+            this.showUserDetails(userId);
+          });
         });
       }
     },
@@ -45,7 +54,54 @@
         case 'female': return 'fas fa-venus';
         default: return 'fas fa-genderless';
       }
-    }
+    },
+    showUserDetails (userId) {
+      const user = this.ruData.find(obj => obj.login.uuid === userId);
+
+      let tmpStr = '';
+      tmpStr += `
+      <article class="user-detail__content">
+        <picture class="user-detail__picture">
+          <img src="${user.picture.large}" alt="" />
+        </picture>
+        <h1 class="user-detail__name">${user.name.first} ${user.name.last}</h1>
+        <table>
+          <tr>
+            <td>Email</td><td>${user.email}</td>
+          </tr>
+          <tr>
+            <td>Phone</td><td>${user.phone}</td>
+          </tr>
+          <tr>
+            <td>Gender</td><td>${user.gender}</td>
+          </tr>
+          <tr>
+            <td>Day of birth</td><td>${user.dob.date}</td>
+          </tr>
+          <tr>
+            <td>Cell</td><td>${user.cell}</td>
+          </tr>
+          <tr>
+            <td>Location</td><td>${user.location.street.name} ${user.location.street.number} ${user.location.city} ${user.location.country}</td>
+          </tr>
+          <tr>
+            <td>Nationality</td><td>${user.nat}</td>
+          </tr>
+          <tr>
+            <td>User id</td><td>${user.login.uuid}</td>
+          </tr>
+          <tr>
+            <td>Username</td><td>${user.login.username}</td>
+          </tr>
+          <tr>
+            <td>Registered</td><td>${user.registered.date}</td>
+          </tr>
+        </table>
+      </article>
+      `;
+      this.userDetailElement.innerHTML = tmpStr;
+      this.userDetailElement.classList.add('open');
+    },
   };
   app.initialize();
 })();

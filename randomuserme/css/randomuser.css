@@ -46,8 +46,52 @@
   top: 0;
   right: 0;
 
-  padding: calc(var(--gutter)*1) calc(var(--gutter)*1);
-
   background: var(--color-blue);
   color: var(--color-white);
+
+  width: 64px;
+  height: 64px;
+
+  text-align: center;
+  line-height: 64px;
+  font-size: 2rem;
+}
+.user-detail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.86);
+
+  transition: all 268ms ease-in-out 0s;
+  transform:  scale(0);
+}
+
+.user-detail__content {
+  position: absolute;
+  width: 80%;
+  min-height: 100%;
+  right: 0;
+
+  background: rgba(255, 255, 255, 1);
+}
+
+.user-detail__picture {
+  width: 100%;
+}
+
+.user-detail__picture > img {
+  object-fit: cover;
+  width: 100%;
+  height: 50vw;
+}
+
+.user-detail__name {
+  padding: calc(var(--gutter)*1);
+}
+
+.user-detail.open {
+  transform: scale(1);
 }
