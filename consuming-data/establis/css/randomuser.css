@@ -1,0 +1,131 @@
+.wrapper--main {
+  padding: calc(var(--gutter)*2) 0;
+}
+
+.random-users-list > div {
+  margin-bottom: calc(var(--gutter)*2);
+}
+
+.random-user {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 312px;
+}
+
+.random-user__name {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: calc(var(--gutter)*1);
+  left: 0;
+
+  display: inline-block;
+
+  font-size: 1.42rem;
+  padding: calc(var(--gutter)*1) calc(var(--gutter)*1);
+
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.random-user__picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.random-user__picture > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.random-user__gender {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background: var(--color-blue);
+  color: var(--color-white);
+
+  width: 64px;
+  height: 64px;
+
+  text-align: center;
+  line-height: 64px;
+  font-size: 2rem;
+}
+.user-detail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.86);
+
+  transition: all 268ms ease-in-out 0s;
+  transform:  scale(0);
+}
+
+.user-detail__content {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  right: 0;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  background: rgba(255, 255, 255, 1);
+}
+
+.user-detail__picture {
+  display: block;
+  width: 100%;
+  height: 50vh;
+}
+
+.user-detail__picture > img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.user-detail__name {
+  padding: calc(var(--gutter)*1);
+}
+
+.user-detail.open {
+  transform: scale(1);
+}
+
+.user-detail__info {
+  border-collapse: collapse;
+  margin: calc(var(--gutter)*1);
+
+  border: 1px solid rgba(200, 200, 200, 1);
+}
+
+.user-detail__info tbody tr {
+  background: rgba(242, 242, 242, 1);
+}
+
+.user-detail__info tbody tr:nth-of-type(even) {
+  background: rgba(250, 250, 250, 1);
+}
+
+.user-detail__info tbody tr td {
+  padding: calc(var(--gutter)*1);
+  border: 1px solid rgba(200, 200, 200, 1);
+}
+
+.user-detail__street {
+  display: block;
+}
+
+.user-detail__city {
+  display: block;
+}
